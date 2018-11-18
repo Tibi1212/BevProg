@@ -1,46 +1,35 @@
-#include "std_lib_facilities.h"	
-
-
+#include <iostream>
+#include <iomanip>
 using namespace std;
-
 int main()
 {
-    char op;
-    float num1, num2;
-
-    cout << "Válszd ki a műveletet + vagy - vagy * vagy /: ";
-    cin >> op;
-
-    cout << "Add meg az első számot: ";
-    cin >> num1;
-    cout << "Add meg a második számot: ";
-
-    
-    cin>> num2;
-
-    switch(op)
-    {
-        case '+':
-            cout <<"Az eredmény:\t"<< num1+num2<<endl;
-            break;
-
-        case '-':
-            cout <<"Az eredmény:\t"<< num1-num2<<endl;
-            break;
-
-        case '*':
-            cout <<"Az eredmény:\t"<< num1*num2<<endl;
-            break;
-
-        case '/':
-            cout <<"Az eredmény:\t"<< num1/num2<<endl;
-            break;
-
-        default:
-            // If the operator is other than +, -, * or /, error message is shown
-            cout << "Hiba! A művelet nem létezik!";
-            break;
-    }
-
-    return 0;
+int num1, num2;
+char opr;
+cout << "Enter two integers: ";
+cin >> num1 >> num2;
+cout << endl;
+cout << "Enter operator: + (addition), - (subtraction)," << " * (multiplication), / (division): ";
+cin >> opr;
+cout << endl;
+cout << num1 << " " << opr << " " << num2 << " = ";
+switch (opr){
+case '+':
+cout << num1 + num2 << endl;
+break;
+case'-':
+cout << num1 - num2 << endl;
+break;
+case'*':
+cout << num1 * num2 << endl;
+break;
+case'/':
+if (num2 != 0)
+cout << num1 / num2 << endl;
+else
+cout << "ERROR \nCannot divide by zero" << endl;
+break;
+default:
+cout << "Illegal operation" << endl;
+}
+return 0;
 }
