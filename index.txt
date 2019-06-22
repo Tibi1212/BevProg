@@ -1,2 +1,1 @@
-Ez egy uj változtatás
-újabb változtatás
+Új commitolásom
