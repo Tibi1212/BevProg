@@ -1,0 +1,27 @@
+import sys
+import random
+
+def game():
+    a = int(input("How many game do you want to play?"))
+    for i in range(0, a):
+        ran = random.randint(1, 26)
+        counter = 0
+        guess= None
+
+        while ran != guess:
+            try:
+                guess = int(input("Guess a number: "))
+            except:
+                print("Not a number")
+                continue
+            if guess != ran:
+                counter+=1
+                if guess> ran:
+                    print("Too high")
+                else:
+                    print("Too low")
+
+            else:
+                print("Correct! Your attempt %s" % counter)
+                sys.exit()
+game()
